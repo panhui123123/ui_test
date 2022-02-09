@@ -26,6 +26,7 @@ class BaseAction(object):
         self.__setattr = setattr
         self.__quit = quit
         self.__touch = touch
+        self.__snapshot = snapshot
 
     def start_app(self):
         """
@@ -55,12 +56,19 @@ class BaseAction(object):
         """
         install(self.__filePath)
 
-    def unInstall_app(self):
+    def uninstall_app(self):
         """
         卸载app
         :return:
         """
         uninstall(self.__package)
+
+    def kill_app(self):
+        """
+        杀掉app
+        :return:
+        """
+        shell("am force-stop '{}'".format(self.__package))
 
     def find_element(self, feature):
         """
@@ -189,7 +197,7 @@ class BaseAction(object):
         end = int(self.width * end[0]), int(self.height * end[1])
         self.__poco.swipe(start, end, duration=duration)
 
-    def swipeByDirection(self, coordinate, direction):
+    def swipe_by_direction(self, coordinate, direction):
         """
         按照一定的方向滑动
         :param coordinate:初始位置坐标
@@ -222,8 +230,8 @@ class BaseAction(object):
         获取当前页面截图
         :return:
         '''
-        snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\logs\{}'.format(filename),
-                 msg=msg)
+        self.__snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\screenshot\{}'.format(filename),
+                        msg=msg)
 
     def key_search(self):
         """
@@ -244,16 +252,16 @@ class BaseAction(object):
         Enter键
         :return:
         """
-        self.__keyEvent("KEYCODE_SEARCH")
+        self.__keyEvent("KEYCODE_ENTER")
 
-    def key_code(self, name):
+    def key_code(self, key_name):
         """
         键盘按键
         表示键盘上的按键0-9 A-Z
-        :param name: 0-9 A-Z
+        :param key_name: 0-9 A-Z
         :return:
         """
-        keys = "KEYCODE_" + str(name)
+        keys = "KEYCODE_" + str(key_name)
         self.__keyEvent(keys)
 
     def setattr(self, element, attr, value):

@@ -1,6 +1,7 @@
 import configparser
 import os
 
+
 class Config:
     def __init__(self):
         # 初始化方法，获取一个config对象
