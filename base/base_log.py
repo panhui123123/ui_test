@@ -11,7 +11,7 @@ class Log:
     # 获取当前脚本的上上级路径，即整个项目的真实路径
     project_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
     # 日志文件路径
-    log_path = project_path + r'\logs' + r'\{}.logs'.format(time.strftime('%Y_%m_%d__%H时%M分%S秒'))
+    log_path = project_path + r'\logs' + r'\{}.txt'.format(time.strftime('%Y_%m_%d__%H时%M分%S秒'))
     # 设置处理器，并指定文件名和读写模式
     file_handler = logging.FileHandler(filename=log_path, mode='w')
     # 处理器设置日志级别

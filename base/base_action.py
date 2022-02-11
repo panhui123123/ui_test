@@ -1,7 +1,9 @@
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
+from airtest.utils.logger import get_logger
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 import os
+import logging
 
 
 class BaseAction(object):
@@ -14,6 +16,9 @@ class BaseAction(object):
             auto_setup(__file__, logdir=True, devices=["Android:///", ])
         # 获取定位元素的驱动
         self.__poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
+        # 将控制台log输出级别设置为Error
+        logger = get_logger("airtest")
+        logger.setLevel(logging.ERROR)
         # 包名
         self.__package = "com.huiian.timing"
         # 获取屏幕宽度
@@ -22,10 +27,13 @@ class BaseAction(object):
         self.height = G.DEVICE.display_info['height']
         # 安装包路径
         self.__filePath = ""
+        # airtest中api.py内置方法
         self.__keyEvent = keyevent
         self.__setattr = setattr
         self.__quit = quit
+        # airtest中api.py内置方法
         self.__touch = touch
+        # airtest中api.py内置方法
         self.__snapshot = snapshot
 
     def start_app(self):
