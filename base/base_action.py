@@ -10,6 +10,7 @@ class BaseAction(object):
     def __init__(self):
         """
         初始化参数
+        :rtype:
         """
         if not cli_setup():
             # 连接手机
