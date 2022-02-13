@@ -34,8 +34,6 @@ class BaseAction(object):
         self.__quit = quit
         # airtest中api.py内置方法
         self.__touch = touch
-        # airtest中api.py内置方法
-        self.__snapshot = snapshot
 
     def start_app(self):
         """
@@ -234,13 +232,12 @@ class BaseAction(object):
         """
         self.__poco.swipe(element, coordinate, duration=duration)
 
-    def get_screenshot(self, filename, msg):
+    def get_screenshot(self, filename, msg=''):
         '''
         获取当前页面截图
         :return:
         '''
-        self.__snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\screenshot\{}'.format(filename),
-                        msg=msg)
+        snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\screenshot\\' + filename, msg=msg)
 
     def key_search(self):
         """
@@ -292,7 +289,6 @@ class BaseAction(object):
 
 
 if __name__ == '__main__':
-    # A = BaseAction()
-    # print(A.width, A.height)
-    a = 1, 2
-    print(a)
+    A = BaseAction()
+    A.get_screenshot('111.png')
+
