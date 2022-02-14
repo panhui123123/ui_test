@@ -61,4 +61,4 @@ class TestPrivacyPolicy:
 
 
 if __name__ == '__main__':
-    pytest.main(['-v', 'test_001_checkPrivacyPolicy.py'])
+    pytest.main(['-v', 'test_001_checkPrivacyPolicy.py', '--alluredir=report'])
