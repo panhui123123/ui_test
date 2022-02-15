@@ -1,0 +1,166 @@
+{
+  "uid" : "a530343c322606b3",
+  "name" : "test_agreePrivacyPolicy",
+  "fullName" : "test_001_checkPrivacyPolicy.TestPrivacyPolicy#test_agreePrivacyPolicy",
+  "historyId" : "186c0d415961d048ab45bba7c507b069",
+  "time" : {
+    "start" : 1644844005203,
+    "stop" : 1644844013797,
+    "duration" : 8594
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_xunit_setup_method_fixture_TestPrivacyPolicy",
+    "time" : {
+      "start" : 1644844001134,
+      "stop" : 1644844005203,
+      "duration" : 4069
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "点击同意按钮",
+      "time" : {
+        "start" : 1644844005203,
+        "stop" : 1644844009377,
+        "duration" : 4174
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "点击允许权限",
+      "time" : {
+        "start" : 1644844010382,
+        "stop" : 1644844012556,
+        "duration" : 2174
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "检查手机号登陆按钮是否存在，如果不存在则截图",
+      "time" : {
+        "start" : 1644844013571,
+        "stop" : 1644844013797,
+        "duration" : 226
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "断言",
+      "time" : {
+        "start" : 1644844013797,
+        "stop" : 1644844013797,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_method_fixture_TestPrivacyPolicy::0",
+    "time" : {
+      "start" : 1644844013797,
+      "stop" : 1644844014108,
+      "duration" : 311
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "一直点击同意进入登陆首页"
+  }, {
+    "name" : "feature",
+    "value" : "首次进入app"
+  }, {
+    "name" : "tag",
+    "value" : "run(order=1)"
+  }, {
+    "name" : "suite",
+    "value" : "test_001_checkPrivacyPolicy"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPrivacyPolicy"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-3BND1OS"
+  }, {
+    "name" : "thread",
+    "value" : "3776-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_001_checkPrivacyPolicy"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=1)" ]
+  },
+  "source" : "a530343c322606b3.json",
+  "parameterValues" : [ ]
+}

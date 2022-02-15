@@ -1,0 +1,47 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-3BND1OS",
+    "children" : [ {
+      "name" : "3776-MainThread",
+      "children" : [ {
+        "name" : "test_disagreePrivacyPolicy",
+        "uid" : "c7145727c4ad1a28",
+        "parentUid" : "b68646d8e053053411698593cdeede45",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644844018312,
+          "stop" : 1644844041653,
+          "duration" : 23341
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_agreePrivacyPolicy",
+        "uid" : "a530343c322606b3",
+        "parentUid" : "b68646d8e053053411698593cdeede45",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644844005203,
+          "stop" : 1644844013797,
+          "duration" : 8594
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b68646d8e053053411698593cdeede45"
+    } ],
+    "uid" : "04d7e5044f957f44b389bfb1abe9dd4a"
+  } ]
+}

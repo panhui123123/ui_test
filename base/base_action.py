@@ -122,7 +122,8 @@ class BaseAction(object):
         :param times:点击次数
         :return:
         """
-        self.__touch(Template(image_file), times=times)
+        self.__touch(Template(os.path.abspath(os.path.dirname(os.path.dirname(__file__)) + r'\images\\' + image_file)),
+                     times=times)
 
     def click_element(self, element):
         """
