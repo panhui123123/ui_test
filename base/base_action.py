@@ -14,7 +14,7 @@ class BaseAction(object):
         """
         if not cli_setup():
             # 连接手机
-            auto_setup(__file__, logdir=True, devices=["Android:///", ])
+            auto_setup(__file__, logdir=False, devices=["Android:///", ])
         # 获取定位元素的驱动
         self.__poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
         # 将控制台log输出级别设置为Error
@@ -196,23 +196,22 @@ class BaseAction(object):
     def swipe_to(self, start, end, duration=1):
         """
         滑动 从start 滑动到end
-        :param start: 初始坐标 参数形式[x,y] 相对坐标百分比
+        :param start: 初始坐标 参数形式[x,y] 比如[0.5,0.5]相对坐标百分比
         :param end: 需要滑动到的位置[x,y]
         :param duration:表示滑动时长，单位s
         :return:
         """
-        start = int(self.width * start[0]), int(self.height * start[1])
-        end = int(self.width * end[0]), int(self.height * end[1])
         self.__poco.swipe(start, end, duration=duration)
 
-    def swipe_by_direction(self, coordinate, direction):
+    def swipe_by_direction(self, start, direction, duration=1):
         """
         按照一定的方向滑动
-        :param coordinate:初始位置坐标
+        :param duration: 时长
+        :param start:初始位置坐标
         :param direction:方向 参数为left=[-0.1,0] right = [0.1,0] up = [0,-0.1] down = [0,0.1]
         :return:
         """
-        self.__poco.swipe(coordinate, direction=direction)
+        self.__poco.swipe(start, direction=direction, duration=duration)
 
     def drag_element(self, element1, element2):
         """

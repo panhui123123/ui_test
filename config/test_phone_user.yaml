@@ -1,5 +1,5 @@
 test_phone_user:
   phone:
     '15608654511'
-  passward:
+  password:
     '111111'

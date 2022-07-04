@@ -20,28 +20,9 @@ class TestPrivacyPolicy:
         # 杀掉app
         self.base_action.kill_app()
 
-    @pytest.mark.run(order=1)
-    @allure.story('一直点击同意进入登陆首页')
-    # 点击同意进入登录页
-    def test_agreePrivacyPolicy(self):
-        with allure.step('点击同意按钮'):
-            Pages().privacy_policy.click_agree_button()
-        time.sleep(1)
-        with allure.step('点击允许权限'):
-            Pages().privacy_policy.click_permission_allowed_button()
-        time.sleep(1)
-        with allure.step('检查手机号登陆按钮是否存在，如果不存在则截图'):
-            result = Pages().privacy_policy.check_loginByPhoneButton_is_existed()
-        # 如果不存在保存截图
-        if not result:
-            self.base_action.get_screenshot('进入登陆页失败截图.png')
-        with allure.step('断言'):
-            assert result
-
-    @pytest.mark.run(order=2)
     @allure.story('一直点击不同意退出app')
     # 点击同意进入登录页
-    def test_disagreePrivacyPolicy(self):
+    def test_01_disagreePrivacyPolicy(self):
         with allure.step('点击不同意'):
             Pages().privacy_policy.click_disagree_button()
             time.sleep(1)
@@ -59,6 +40,23 @@ class TestPrivacyPolicy:
         with allure.step('断言'):
             assert not result
 
+    @allure.story('一直点击同意进入登陆首页')
+    # 点击同意进入登录页
+    def test_02_agreePrivacyPolicy(self):
+        with allure.step('点击同意按钮'):
+            Pages().privacy_policy.click_agree_button()
+        time.sleep(1)
+        with allure.step('点击允许权限'):
+            Pages().privacy_policy.click_permission_allowed_button()
+        time.sleep(1)
+        with allure.step('检查手机号登陆按钮是否存在，如果不存在则截图'):
+            result = Pages().privacy_policy.check_loginByPhoneButton_is_existed()
+        # 如果不存在保存截图
+        if not result:
+            self.base_action.get_screenshot('进入登陆页失败截图.png')
+        with allure.step('断言'):
+            assert result
+
 
 if __name__ == '__main__':
-    pytest.main(['-v', 'test_001_checkPrivacyPolicy.py', '--alluredir=report'])
+    pytest.main(['-v', 'test_001_checkPrivacyPolicy.py'])

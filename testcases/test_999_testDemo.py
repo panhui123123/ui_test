@@ -3,12 +3,10 @@ import random
 
 
 class TestDemo:
-    @pytest.mark.run(order=2)
-    def test001(self):
+    def test_001(self):
         print(111)
 
-    @pytest.mark.run(order=1)
-    def test002(self):
+    def test_002(self):
         print(222)
 
 
